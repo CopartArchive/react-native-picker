@@ -1,6 +1,8 @@
 'use strict';
 
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types'
+
 import {
 	StyleSheet,
 	View,
@@ -8,7 +10,8 @@ import {
 	Animated,
 	Platform,
 	Dimensions,
-	PickerIOS
+	PickerIOS,
+	ViewPropTypes
 } from 'react-native';
 
 import PickerAndroid from 'react-native-picker-android';
@@ -23,14 +26,14 @@ const shortSide = width > height ? height : width;
 export default class PickerAny extends Component {
 
 	static propTypes = {
-		style: View.propTypes.style,
+		style: ViewPropTypes.style,
 		pickerElevation: PropTypes.number,
 		pickerBtnText: PropTypes.string,
 		pickerCancelBtnText: PropTypes.string,
 		pickerBtnStyle: Text.propTypes.style,
 		pickerTitle: PropTypes.string,
 		pickerTitleStyle: Text.propTypes.style,
-		pickerToolBarStyle: View.propTypes.style,
+		pickerToolBarStyle: ViewPropTypes.style,
 		showMask: PropTypes.bool,
 		showDuration: PropTypes.number,
 		pickerData: PropTypes.any.isRequired,
